@@ -29,3 +29,4 @@ class DatabaseCollections:
 
     userCollectionName = getDatabase().Users
     appCollectionName = getDatabase().Apps
+    deviceCollectionName = getDatabase().Devices

@@ -7,12 +7,26 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,https://github.com/CodeLankaHack/team---iAS.git
+# distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from config import *
+from Device import Device
+from DeviceDAO import DeviceDAO
+import time
 
-if __name__ == '__main__':
-    app.run(host="localhost", port=5000)
+
+def generateId():
+    return int(round(time.time()*1000))
+
+def enrollDevice(deviceOwner = "", deviceType = "", deviceName = ""):
+    deviceId = generateId()
+    device = Device()
+    device.deviceID = deviceId
+    device.deviceType = deviceType
+    device.deviceName = deviceName
+    device.deviceOwner = deviceOwner
+
+    deviceDao = DeviceDAO()
+    return deviceDao.createDevice(device)
