@@ -13,9 +13,11 @@
 # limitations under the License.
 
 class App:
-    def __init__(self, name="",
+    def __init__(self, appid="",
+                 name="",
                  type="",
                  image=""):
+        self.appid = appid
         self.type = type
         self.image = image
         self.name = name

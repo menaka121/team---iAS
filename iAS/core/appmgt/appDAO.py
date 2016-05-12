@@ -14,10 +14,13 @@
 
 from iAS.common.Constants import *
 import logging
+from bson.objectid import ObjectId
+from app import *
+
 
 def putAppData(name,
                type,
-                image):
+               image):
     DatabaseCollections.appCollectionName.insert_one(
         {
             "name": name,
@@ -26,3 +29,25 @@ def putAppData(name,
         }
     )
     logging.info("Inserted App data")
+
+
+def rowCount(dbCollection):
+    return dbCollection.count()
+
+
+def NumberOfApps():
+    return rowCount(DatabaseCollections.appCollectionName)
+
+
+def getAppDetailsById(Id):
+    document = DatabaseCollections.appCollectionName.find_one({'_id': ObjectId(Id)})
+    obj = App(appid=document["_id"],
+              name=document["name"],
+              type=document["type"],
+              image=document["image"])
+
+    return obj
+
+
+def getAppsIDList():
+    return DatabaseCollections.appCollectionName.distinct('_id')

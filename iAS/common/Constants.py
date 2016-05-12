@@ -28,3 +28,4 @@ class DatabaseCollections:
         pass
 
     userCollectionName = getDatabase().Users
+    appCollectionName = getDatabase().Apps
