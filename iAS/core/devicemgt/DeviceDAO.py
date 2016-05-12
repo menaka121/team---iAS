@@ -22,7 +22,7 @@ class DeviceDAO:
 
     def createDevice(self, device):
         try:
-            databaseCollections.deviceCollectionName.insert_one(
+            DatabaseCollections.deviceCollectionName.insert_one(
                 {
                     "deviceId": device.deviceID,
                     "deviceName": device.deviceName,
@@ -38,7 +38,7 @@ class DeviceDAO:
 
     def updateDevice(self, deviceId, device):
         try:
-            databaseCollections.deviceCollectionName.update_one(
+            DatabaseCollections.deviceCollectionName.update_one(
                 {"deviceId": deviceId},
                 {
                     "deviceId": device.deviceID,
@@ -52,13 +52,13 @@ class DeviceDAO:
 
     def deleteDevice(self, deviceId):
         try:
-            databaseCollections.deviceCollectionName.remove({"deviceId": deviceId})
+            DatabaseCollections.deviceCollectionName.remove({"deviceId": deviceId})
             return "Device Deleted Successfully"
         except IOError:
             return "Device Deletion Failed"
 
     def getDevice(self, deviceId):
-        device = databaseCollections.deviceCollectionName.find({"deviceId": deviceId})
+        device = DatabaseCollections.deviceCollectionName.find({"deviceId": deviceId})
         if device is None:
             return None
         else:
