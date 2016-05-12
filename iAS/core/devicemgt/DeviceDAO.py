@@ -13,10 +13,10 @@
 # limitations under the License.
 
 from iAS.common.Constants import *
+from Device import Device
 
 
 class DeviceDAO:
-
     def __init__(self):
         pass
 
@@ -34,18 +34,16 @@ class DeviceDAO:
         except IOError:
             return "Insertion Failed"
 
-
-
     def updateDevice(self, deviceId, device):
         try:
             DatabaseCollections.deviceCollectionName.update_one(
-                {"deviceId": deviceId},
-                {
-                    "deviceId": device.deviceID,
-                    "deviceName": device.deviceName,
-                    "deviceOwner": device.deviceOwner,
-                    "deviceType": device.deviceType,
-                })
+                    {"deviceId": deviceId},
+                    {
+                        "deviceId": device.deviceID,
+                        "deviceName": device.deviceName,
+                        "deviceOwner": device.deviceOwner,
+                        "deviceType": device.deviceType,
+                    })
             return "Update Device Successful"
         except IOError:
             return "Update Device Failed"
@@ -64,3 +62,13 @@ class DeviceDAO:
         else:
             return device
 
+    def getDevices(self, userId):
+        deviceList = []
+        try:
+            devices = DatabaseCollections.deviceCollectionName.find({"deviceOwner": userId})
+            for device in devices:
+                dev = Device(device["deviceId"], device["deviceName"], device["deviceOwner"], device["deviceType"])
+                deviceList.append(dev)
+            return deviceList
+        except IOError:
+            return "Finding devices failed."
