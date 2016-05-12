@@ -15,18 +15,14 @@
 from iAS.common.Constants import *
 import logging
 
-def putUserData(userId,
-                userName,
-                gender,
-                email,
-                profilePicture):
+def putUserData(User):
     DatabaseCollections.userCollectionName.insert_one(
         {
-            "userId": userId,
-            "userName": userName,
-            "gender": gender,
-            "email": email,
-            "profilePicture": profilePicture
+            "userId": User.userId,
+            "userName": User.userName,
+            "gender": User.gender,
+            "email": User.email,
+            "profilePicture": User.profilePicture
         }
     )
     logging.info("Inserted User data")
