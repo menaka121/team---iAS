@@ -1,5 +1,7 @@
 # iAS - iApplicationServer
 
+##Synopsis
+
 iOT App Server (iAS) is an open source cloud platform for iOT applications.
 Platform introduces some device types which can be enrolled to the platform and an application
 can be used for it.
@@ -21,3 +23,4 @@ benefited. This will lead the community to accelerate
 the research in the area of iOT and come up with new
 ideas which can be useful to anyone with or without the
 knowledge in the domain.
+
