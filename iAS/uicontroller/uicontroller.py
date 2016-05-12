@@ -13,23 +13,43 @@
 # limitations under the License.
 
 from __init__ import *
+from iAS.core.appmgt import appDAO
 
 
 class Main(Resource):
     def get(self):
         headers = {'Content-Type': 'text/html'}
-        return make_response(
-            render_template('index.html'),
-            200, headers)
+        if 'User' in session:
+            return make_response(
+                redirect('/applications')
+            )
+        else:
+            return make_response(
+                render_template('index.html'),
+                200, headers)
 
 
 class Applications(Resource):
     def get(self):
         headers = {'Content-Type': 'text/html'}
-        return make_response(
-            render_template('applications/applications.html'),
-            200, headers
-        )
+
+        if 'User' in session:
+            username = session['User']['userName']
+            profilePicture = session['User']['profilePicture']
+            appList = appDAO.getAppList()
+
+            return make_response(
+                render_template('applications/applications.html',
+                                username = username,
+                                profilePicture = profilePicture,
+                                appList = appList
+                                ),
+                200, headers
+            )
+        else:
+            return make_response(
+                redirect('/login')
+            )
 
 
 class Application_Render(Resource):
