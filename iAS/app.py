@@ -19,3 +19,18 @@ app = Flask(__name__)
 api = Api(app)
 
 api.add_resource(main, '/')
+api.add_resource(login, '/login')
+
+
+@app.route('/callback')
+@google.authorized_handler
+def authorized(resp):
+    session['access_token'] = resp['access_token']
+    getUserInfo(session["access_token"])
+    session["User"] = json.loads(getUserJson())
+    return redirect('/')
+
+
+@google.tokengetter
+def get_access_token():
+    return session.get('access_token')

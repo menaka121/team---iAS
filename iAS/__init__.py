@@ -18,3 +18,4 @@ from flask_restful import Api
 
 # files
 from iAS.uicontroller.uicontroller import *
+from iAS.uicontroller.authentication import *
