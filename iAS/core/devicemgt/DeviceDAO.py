@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from iAS.common.Constants import *
+
 
 class DeviceDAO:
 
@@ -19,16 +21,46 @@ class DeviceDAO:
         pass
 
     def createDevice(self, device):
-        print device
+        try:
+            databaseCollections.deviceCollectionName.insert_one(
+                {
+                    "deviceId": device.deviceID,
+                    "deviceName": device.deviceName,
+                    "deviceOwner": device.deviceOwner,
+                    "deviceType": device.deviceType,
+                }
+            )
+            return "Success"
+        except IOError:
+            return "Insertion Failed"
+
+
 
     def updateDevice(self, deviceId, device):
-        print(deviceId, device)
-
+        try:
+            databaseCollections.deviceCollectionName.update_one(
+                {"deviceId": deviceId},
+                {
+                    "deviceId": device.deviceID,
+                    "deviceName": device.deviceName,
+                    "deviceOwner": device.deviceOwner,
+                    "deviceType": device.deviceType,
+                })
+            return "Update Device Successful"
+        except IOError:
+            return "Update Device Failed"
 
     def deleteDevice(self, deviceId):
-        pass
+        try:
+            databaseCollections.deviceCollectionName.remove({"deviceId": deviceId})
+            return "Device Deleted Successfully"
+        except IOError:
+            return "Device Deletion Failed"
 
     def getDevice(self, deviceId):
-        pass
-
+        device = databaseCollections.deviceCollectionName.find({"deviceId": deviceId})
+        if device is None:
+            return None
+        else:
+            return device
 

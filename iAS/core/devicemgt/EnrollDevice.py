@@ -12,16 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Base class for device types
+from Device import Device
+from DeviceDAO import DeviceDAO
+import time
 
 
-class Device:
-    def __init__(self,
-                 deviceID = "",
-                 deviceName = "",
-                 deviceOwnerID = "",
-                 deviceType= ""):
-        self.deviceID = deviceID
-        self.deviceName = deviceName
-        self.deviceOwner = deviceOwnerID
-        self.deviceType = deviceType
+def generateId():
+    return int(round(time.time()*1000))
+
+def enrollDevice(deviceOwner = "", deviceType = "", deviceName = ""):
+    deviceId = generateId()
+    device = Device()
+    device.deviceID = deviceId
+    device.deviceType = deviceType
+    device.deviceName = deviceName
+    device.deviceOwner = deviceOwner
+
+    deviceDao = DeviceDAO()
+    return deviceDao.createDevice(device)
