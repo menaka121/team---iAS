@@ -12,31 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from iAS.core.dbmgt.getConnection import *
 
-from __init__ import *
+class GoogleAuthentication:
+    def __init__(self):
+        pass
 
-app = Flask(__name__)
-api = Api(app)
-
-
-api.add_resource(Main, '/')
-
-api.add_resource(Applications, '/applications')
-
-
-api.add_resource(Login, '/login')
+    GOOGLE_CLIENT_ID = '927082250462-ho1ode0ig0rrhicrhvfgvpbk50bou779.apps.googleusercontent.com'
+    GOOGLE_CLIENT_SECRET = 'BbjUuhHLVIDyeQbASzeamSmf'
+    REDIRECT_URI = '/callback'  # one of the Redirect URIs from Google APIs console
 
 
-@app.route('/callback')
-@google.authorized_handler
-def authorized(resp):
-    session['access_token'] = resp['access_token']
-    getUserInfo(session["access_token"])
-    session["User"] = json.loads(getUserJson())
-    return redirect('/')
+class DatabaseCollections:
+    def __init__(self):
+        pass
 
-
-@google.tokengetter
-def get_access_token():
-    return session.get('access_token')
-
+    userCollectionName = getDatabase().Users
