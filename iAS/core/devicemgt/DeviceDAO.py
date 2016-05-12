@@ -14,14 +14,16 @@
 
 
 class DeviceDAO:
+
     def __init__(self):
         pass
 
     def createDevice(self, device):
-        pass
+        print device
 
     def updateDevice(self, deviceId, device):
-        pass
+        print(deviceId, device)
+
 
     def deleteDevice(self, deviceId):
         pass
