@@ -6,12 +6,12 @@
 
     <div class="row">
         <div class="col-md-6">
-            <h1>The Topic</h1>
-            <h3>This is a app to measure heat </h3>
+            <h1>{{ appDetails.name }}</h1>
+            <h3>{{ appDetails.description }}</h3>
         </div>
 
         <div class="col-md-6">
-            <img class="img-responsive" src="{{ url_for('static', filename='images/hanthana villa.jpg') }}">
+            <img class="img-responsive" src="{{ url_for('static', filename=''+appDetails.image) }}">
         </div>
     </div>
 
@@ -20,8 +20,9 @@
         <div class="form-group">
             <label for="exampleInputName2">Select Device : </label>
             <select class="form-control" id="exampleSelect1">
-              <option>Raspberry Pi</option>
-              <option>Arduino</option>
+                {% for device in appDetails.deviceList %}
+                <option>{{ device }}</option>
+                {% endfor %}
             </select>
         </div>
 
@@ -42,10 +43,11 @@
           </div>
           <div style="text-align: center" class="modal-body">
 
-              <form class="form-horizontal" action="" method="get">
+              <form class="form-horizontal" action="/device/downloads" method="get">
                     <div class="form-group">
                         <input type="text" name="device-name">
                     </div>
+                        <input type="hidden" name="appid" value="{{ appDetails.appid }}">
 
                     <button type="submit" class="btn btn-primary">Dwonload ZIP <span class="glyphicon glyphicon-download"></span></button>
               </form>

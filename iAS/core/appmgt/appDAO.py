@@ -36,7 +36,7 @@ def putAppData(App):
 #             "name": "Fire Alarm System",
 #             "type": "FireAlarm",
 #             "description": "A fire alarm system is number of devices working together to detect and warn people",
-#             "image": "/static/images/devices/fireAlarmSystem/fireAlarmSystem.jpg"
+#             "image": "images/devices/fireAlarmSystem/fireAlarmSystem.jpg"
 #         }
 #     )
 #     logging.info("Inserted App data")

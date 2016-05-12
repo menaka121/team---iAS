@@ -51,6 +51,32 @@ class Applications(Resource):
                 redirect('/login')
             )
 
+
+class Application_Render(Resource):
+    def get(self, id):
+        headers = {'Content-Type': 'text/html'}
+
+        if 'User' in session:
+            username = session['User']['userName']
+            profilePicture = session['User']['profilePicture']
+            appDetais = appDAO.getAppDetailsById(id)
+
+            print appDetais.de
+
+            return make_response(
+                render_template('applications/application.html',
+                                username = username,
+                                profilePicture = profilePicture,
+                                appDetails = appDetais
+                                ),
+                200, headers
+            )
+        else:
+            return make_response(
+                redirect('/login')
+            )
+
+
 class EnrolledApps(Resource):
     def get(self):
         headers = {'Content-Type': 'text/html'}
@@ -60,13 +86,6 @@ class EnrolledApps(Resource):
         )
 
 
-class Application_Render(Resource):
-    def get(self, id):
-        headers = {'Content-Type': 'text/html'}
-        return make_response(
-            render_template('applications/application.html'),
-            200, headers
-        )
 
 class Enrolled_App_Render(Resource):
     def get(self, id):
