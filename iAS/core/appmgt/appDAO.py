@@ -20,11 +20,13 @@ from app import *
 
 def putAppData(name,
                type,
+               description,
                image):
     DatabaseCollections.appCollectionName.insert_one(
         {
             "name": name,
             "type": type,
+            "description": description,
             "image": image
         }
     )
@@ -44,6 +46,7 @@ def getAppDetailsById(Id):
     obj = App(appid=document["_id"],
               name=document["name"],
               type=document["type"],
+              description=document["description"],
               image=document["image"])
 
     return obj

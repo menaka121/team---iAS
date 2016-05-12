@@ -16,7 +16,9 @@ class App:
     def __init__(self, appid="",
                  name="",
                  type="",
+                 description="",
                  image=""):
+        self.description = description
         self.appid = appid
         self.type = type
         self.image = image
