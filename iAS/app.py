@@ -18,8 +18,7 @@ from __init__ import *
 app = Flask(__name__)
 api = Api(app)
 
-<<<<<<< HEAD
-api.add_resource(main, '/')
+api.add_resource(Main, '/')
 api.add_resource(login, '/login')
 
 
@@ -35,6 +34,3 @@ def authorized(resp):
 @google.tokengetter
 def get_access_token():
     return session.get('access_token')
-=======
-api.add_resource(Main, '/')
->>>>>>> 34965b4dc3e377e9f0a432d2249fce2807de9e35

@@ -1,8 +1,5 @@
 Flask==0.10.1
 Flask-RESTful==0.3.5
-<<<<<<< HEAD
 Flask-OAuth==0.12
 pymongo==3.2.2
-=======
 paho-mqtt=1.1
->>>>>>> 34965b4dc3e377e9f0a432d2249fce2807de9e35
