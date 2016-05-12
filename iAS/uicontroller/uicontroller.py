@@ -12,9 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# libraries
-from flask import Flask
-from flask_restful import Api
+from __init__ import *
 
-# files
-from iAS.uicontroller.uicontroller import *
+class main(Resource):
+    def get(self):
+        headers = {'Content-Type': 'text/html'}
+        return make_response(
+            render_template('index.html'),
+            200, headers)
+

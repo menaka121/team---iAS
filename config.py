@@ -12,9 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# libraries
-from flask import Flask
-from flask_restful import Api
 
-# files
-from iAS.uicontroller.uicontroller import *
+import os
+from iAS.app import *
+
+app.config.from_object(__name__)
+app.secret_key = os.urandom(24)
+app.debug = True
