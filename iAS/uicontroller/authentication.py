@@ -25,11 +25,11 @@ google = oauth.remote_app('google',
                           access_token_url='https://accounts.google.com/o/oauth2/token',
                           access_token_method='POST',
                           access_token_params={'grant_type': 'authorization_code'},
-                          consumer_key=google_authentication.GOOGLE_CLIENT_ID,
-                          consumer_secret=google_authentication.GOOGLE_CLIENT_SECRET)
+                          consumer_key=GoogleAuthentication.GOOGLE_CLIENT_ID,
+                          consumer_secret=GoogleAuthentication.GOOGLE_CLIENT_SECRET)
 
 
-class login(Resource):
+class Login(Resource):
     def get(self):
         callback = url_for('authorized', _external=True)
         return google.authorize(callback=callback)

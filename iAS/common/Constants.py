@@ -14,7 +14,7 @@
 
 from iAS.core.dbmgt.getConnection import *
 
-class google_authentication:
+class GoogleAuthentication:
     def __init__(self):
         pass
 
@@ -23,7 +23,7 @@ class google_authentication:
     REDIRECT_URI = '/callback'  # one of the Redirect URIs from Google APIs console
 
 
-class databaseCollections:
+class DatabaseCollections:
     def __init__(self):
         pass
 

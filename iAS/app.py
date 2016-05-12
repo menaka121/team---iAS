@@ -19,7 +19,7 @@ app = Flask(__name__)
 api = Api(app)
 
 api.add_resource(Main, '/')
-api.add_resource(login, '/login')
+api.add_resource(Login, '/login')
 
 
 @app.route('/callback')
