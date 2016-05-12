@@ -17,7 +17,9 @@ class App:
                  name="",
                  type="",
                  description="",
-                 image=""):
+                 image="",
+                 deviceList = []):
+        self.deviceList = deviceList
         self.description = description
         self.appid = appid
         self.type = type

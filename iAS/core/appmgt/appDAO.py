@@ -24,7 +24,8 @@ def putAppData(App):
             "name": App.name,
             "type": App.type,
             "description": App.description,
-            "image": App.image
+            "image": App.image,
+            "deviceList": App.deviceList
         }
     )
     logging.info("Inserted App data")
@@ -55,8 +56,8 @@ def getAppDetailsById(Id):
               name=document["name"],
               type=document["type"],
               description=document["description"],
-              image=document["image"])
-
+              image=document["image"],
+              deviceList=document["deviceList"])
     return obj
 
 
