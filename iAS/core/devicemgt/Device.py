@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Base class for device types
+
 
 class Device:
     def __init__(self,
@@ -23,5 +25,3 @@ class Device:
         self.deviceName = deviceName
         self.deviceOwner = deviceOwner
         self.deviceType = deviceType
-
-
