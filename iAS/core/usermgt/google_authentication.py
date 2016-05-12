@@ -13,11 +13,10 @@
 # limitations under the License.
 
 from __init__ import *
-from flask_oauth import OAuth
-from iAS.common.Constants import *
-from iAS.core.usermgt.user import *
 from urllib2 import Request, urlopen, URLError
-from iAS.core.dbmgt.operations import *
+
+from iAS.core.usermgt.userDAO import *
+from iAS.core.usermgt.user import *
 
 
 def get_user_data(access_token):

@@ -1,0 +1,144 @@
+@media (min-width: 768px) {
+
+    .navbar-side .navbar-collapse {
+        height: auto;
+        border-top: 0;
+        box-shadow: none;
+        max-height: none;
+        padding-left:0;
+        padding-right:0;
+    }
+    .navbar-side .navbar-collapse.collapse {
+        display: block !important;
+        width: auto !important;
+        padding-bottom: 0;
+        overflow: visible !important;
+    }
+    .navbar-side .navbar-collapse.in {
+        overflow-x: visible;
+    }
+
+    .navbar-side .navbar-side
+    {
+        /*max-width:300px;*/
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .navbar-side .navbar-nav,
+    .navbar-side .navbar-nav > li,
+    .navbar-side .navbar-left,
+    .navbar-side .navbar-right,
+    .navbar-side .navbar-header
+        {float:none !important;}
+
+    .navbar-side .navbar-right .dropdown-menu {left:0;right:auto;}
+    .navbar-side .navbar-collapse .navbar-nav.navbar-right:last-child {
+        margin-right: 0;
+    }
+
+    .navbar-side .navbar-brand-img .img-responsive{
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        max-height: 100px;
+    }
+
+    .navbar-brand-img{
+        height: 110px;
+    }
+
+    .navbar-brand{
+        min-height: 70px;
+        text-align: center;
+    }
+
+    .navbar-side{
+        position: fixed;
+        height: 100%;
+        width: 20%;
+        z-index: 5;
+    }
+
+    .navbar-fixed-top{
+        z-index: 3;
+    }
+
+    #profile-pic{
+        float: left;
+        max-height: 30px;
+        margin-right: 5px;
+    }
+
+    .navbar-top .navbar-right{
+        margin-right: 20px;
+    }
+
+    #content{
+        margin-top: 60px;
+        margin-left: 10%;
+    }
+
+}
+
+@media (max-width: 768px){
+    .navbar-brand img{
+        padding-top: 0px;
+        max-height: 40px;
+        padding-right: 0px;
+    }
+
+    .navbar-brand-img{
+        padding-top: 5px;
+        padding-right: 0px;
+    }
+
+    #profile-pic{
+        float: left;
+        max-height: 30px;
+        margin-right: 5px;
+    }
+
+    .navbar-top{
+        margin-top: 100px;
+    }
+
+
+}
+
+
+
+
+
+/*Common CSS*/
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+
+body{
+    position: relative;
+}
+
+footer{
+    /*position: fixed;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*z-index: 5;*/
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+footer, .navbar, .nav-side{
+    background: #dcdcdc;
+    border: black;
+}
+
+
+.navbar-brand-text{
+    font-weight: bold;
+}

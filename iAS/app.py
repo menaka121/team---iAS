@@ -18,7 +18,13 @@ from __init__ import *
 app = Flask(__name__)
 api = Api(app)
 
-api.add_resource(login, '/login')
+
+api.add_resource(Main, '/')
+
+api.add_resource(Applications, '/applications')
+
+
+api.add_resource(Login, '/login')
 
 
 @app.route('/callback')
@@ -34,4 +40,3 @@ def authorized(resp):
 def get_access_token():
     return session.get('access_token')
 
-api.add_resource(Main, '/')

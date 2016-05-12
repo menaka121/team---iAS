@@ -20,7 +20,7 @@ def putUserData(userId,
                 gender,
                 email,
                 profilePicture):
-    databaseCollections.userCollectionName.insert_one(
+    DatabaseCollections.userCollectionName.insert_one(
         {
             "userId": userId,
             "userName": userName,
@@ -33,7 +33,7 @@ def putUserData(userId,
 
 
 def getUserAvailability(email):
-    if databaseCollections.userCollectionName.find({'email': email}).count() > 0:
+    if DatabaseCollections.userCollectionName.find({'email': email}).count() > 0:
         return False
     else:
         return True
