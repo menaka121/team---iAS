@@ -51,3 +51,12 @@ def getAppDetailsById(Id):
 
 def getAppsIDList():
     return DatabaseCollections.appCollectionName.distinct('_id')
+
+
+def getAppList():
+    len = NumberOfApps()
+    list = []
+    appIDList = getAppsIDList()
+    for i in range(0, len):
+        list.append(getAppDetailsById(appIDList[i]))
+    return list
