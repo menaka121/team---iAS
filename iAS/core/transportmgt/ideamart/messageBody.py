@@ -18,7 +18,7 @@ class messageBody:
                  url="",
                  destAddress="",
                  applicationID=""):
-        self.appI = applicationID
+        self.applicationID = applicationID
         self.destAddress = destAddress
         self.url = url
         self.password = password
