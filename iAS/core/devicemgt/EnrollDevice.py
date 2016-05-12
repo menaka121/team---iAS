@@ -18,7 +18,7 @@ import time
 
 
 def generateId():
-    return int(round(time.time()*1000))
+    return int(round(time.time()))
 
 
 def enrollDevice(deviceOwner = "", deviceType = "", deviceName = ""):
