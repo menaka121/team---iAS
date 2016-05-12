@@ -14,3 +14,4 @@
 
 from flask_restful import Resource
 from flask import *
+from iAS.core.usermgt.google_authentication import *
