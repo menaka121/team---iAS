@@ -14,7 +14,8 @@
 
 from __init__ import *
 
-class main(Resource):
+
+class Main(Resource):
     def get(self):
         headers = {'Content-Type': 'text/html'}
         return make_response(

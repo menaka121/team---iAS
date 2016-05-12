@@ -56,7 +56,7 @@
     .navbar-side{
         position: fixed;
         height: 100%;
-        width: 255px;
+        width: 20%;
         z-index: 5;
     }
 
@@ -76,7 +76,7 @@
 
     #content{
         margin-top: 60px;
-        margin-left: 5px;
+        margin-left: 10%;
     }
 
 }
@@ -97,6 +97,10 @@
         float: left;
         max-height: 30px;
         margin-right: 5px;
+    }
+
+    .navbar-top{
+        margin-top: 100px;
     }
 
 
