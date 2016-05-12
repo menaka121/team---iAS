@@ -4,18 +4,44 @@
     <meta charset="UTF-8">
     <title>IAS - IOT Application Server</title>
 
+    <!-- Add Responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- JavaScript Files -->
-    <script type="text/javascript" src="{{ urlfor('static', filename='jquery/jquery-2.2.3.min.js') }}"></script>
-    <script type="text/javascript" src="{{ urlfor('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery/jquery-2.2.3.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="{{ urlfor('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar-fixed-side.scss') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 
 
 <body>
-{% include 'navbar.html' %}
 
+<div class="content">
+    <!-- Side Navbar -->
+    <div class="col-md-2 nopadding nav-div-side">
+        {% include 'navbar-side.html' %}
+    </div>
+
+    <!-- Content -->
+    <div class="col-md-10 nopadding">
+        <!-- Top Navbar -->
+        {% include 'navbar-top.html' %}
+
+
+        <!-- Content is include in Here -->
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </div>
+</div>
+
+    {% include 'footer.html' %}
 
 </body>
 </html>

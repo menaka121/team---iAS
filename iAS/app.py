@@ -19,3 +19,4 @@ app = Flask(__name__)
 api = Api(app)
 
 api.add_resource(main, '/')
+api.add_resource(Applications, '/applications')

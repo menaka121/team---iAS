@@ -21,3 +21,12 @@ class main(Resource):
             render_template('index.html'),
             200, headers)
 
+
+class Applications(Resource):
+    def get(self):
+        headers = {'Content-Type': 'text/html'}
+        return make_response(
+            render_template('applications/applications.html'),
+            200, headers
+        )
+
