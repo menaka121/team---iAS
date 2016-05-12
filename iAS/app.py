@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# libraries
-from flask import Flask
-from flask_restful import Api
+
+from __init__ import *
+
+app = Flask(__name__)
+api = Api(app)

@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# libraries
-from flask import Flask
-from flask_restful import Api
+from config import *
+
+if __name__ == '__main__':
+    app.run(host="localhost", port=5000)
