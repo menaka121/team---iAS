@@ -31,3 +31,11 @@ class Applications(Resource):
             200, headers
         )
 
+
+class Application_Render(Resource):
+    def get(self, id):
+        headers = {'Content-Type': 'text/html'}
+        return make_response(
+            render_template('applications/application.html'),
+            200, headers
+        )

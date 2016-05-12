@@ -76,7 +76,7 @@
 
     #content{
         margin-top: 60px;
-        margin-left: 10%;
+        margin-left: 5%;
     }
 
 }
@@ -141,4 +141,17 @@ footer, .navbar, .nav-side{
 
 .navbar-brand-text{
     font-weight: bold;
+}
+
+
+/*CSS for Application.HTML*/
+.app-div{
+    border: solid 1px #dbdbdb;
+    height: 320px;
+    border-radius: 5px;
+    background: rgba(200, 182, 255, 0.52);
+}
+
+.app-div-lg{
+    margin-bottom: 10px;
 }
