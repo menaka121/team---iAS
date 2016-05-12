@@ -31,11 +31,27 @@ class Applications(Resource):
             200, headers
         )
 
+class EnrolledApps(Resource):
+    def get(self):
+        headers = {'Content-Type': 'text/html'}
+        return make_response(
+            render_template('applications/enrolledapps.html'),
+            200, headers
+        )
+
 
 class Application_Render(Resource):
     def get(self, id):
         headers = {'Content-Type': 'text/html'}
         return make_response(
             render_template('applications/application.html'),
+            200, headers
+        )
+
+class Enrolled_App_Render(Resource):
+    def get(self, id):
+        headers = {'Content-Type': 'text/html'}
+        return make_response(
+            render_template('applications/enrolleddashboard.html'),
             200, headers
         )
