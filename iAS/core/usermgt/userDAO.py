@@ -13,7 +13,7 @@
 # limitations under the License.
 
 from iAS.common.Constants import *
-
+import logging
 
 def putUserData(userId,
                 userName,
@@ -29,7 +29,7 @@ def putUserData(userId,
             "profilePicture": profilePicture
         }
     )
-    print("Inserted App owners data")
+    logging.info("Inserted User data")
 
 
 def getUserAvailability(email):

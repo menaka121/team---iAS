@@ -12,15 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-class User:
-    def __init__(self, userId="",
-                 userName="",
-                 gender="",
-                 email="",
-                 profilePicture=""
-                 ):
-        self.profilePicture = profilePicture
-        self.email = email
-        self.gender = gender
-        self.userName = userName
-        self.userId = userId
+class App:
+    def __init__(self, appid="",
+                 name="",
+                 type="",
+                 description="",
+                 image=""):
+        self.description = description
+        self.appid = appid
+        self.type = type
+        self.image = image
+        self.name = name

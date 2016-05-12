@@ -11,16 +11,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-class User:
-    def __init__(self, userId="",
-                 userName="",
-                 gender="",
-                 email="",
-                 profilePicture=""
-                 ):
-        self.profilePicture = profilePicture
-        self.email = email
-        self.gender = gender
-        self.userName = userName
-        self.userId = userId
