@@ -38,6 +38,4 @@ def sendMessage(messageBody):
         logging.info('*** Message was not delivered Successfully!! ERROR-CODE: ' + result.status_code + ' ****')
 
 
-# obj = messageBody(message="Hello world!", password="password", url="http://localhost:7000/sms/send",
-#                   destAddress="tel:94771122336", applicationID="APP_000001")
-# sendMessage(obj)
+
