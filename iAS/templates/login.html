@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div style="vertical-align: middle" class="well">
+            <a  href="/login"><img class="img-responsive" src="{{ url_for('static', filename='images/sign_in_with_google.png') }}"></a>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+{% endblock %}
