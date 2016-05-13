@@ -26,7 +26,7 @@ class Main(Resource):
             )
         else:
             return make_response(
-                render_template('index.html'),
+                render_template('login.html'),
                 200, headers)
 
 
