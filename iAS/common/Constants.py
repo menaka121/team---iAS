@@ -18,8 +18,8 @@ class GoogleAuthentication:
     def __init__(self):
         pass
 
-    GOOGLE_CLIENT_ID = '239978309496-2ccenp36sor3hg2om4d4j6om0rbt29r6.apps.googleusercontent.com'
-    GOOGLE_CLIENT_SECRET = 'ejOiH0X0p8OfucKI-4d25mDG'
+    GOOGLE_CLIENT_ID = '927082250462-ho1ode0ig0rrhicrhvfgvpbk50bou779.apps.googleusercontent.com'
+    GOOGLE_CLIENT_SECRET = 'BbjUuhHLVIDyeQbASzeamSmf'
     REDIRECT_URI = '/callback'  # one of the Redirect URIs from Google APIs console
 
 
