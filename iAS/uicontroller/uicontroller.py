@@ -79,20 +79,44 @@ class Application_Render(Resource):
 class EnrolledApps(Resource):
     def get(self):
         headers = {'Content-Type': 'text/html'}
-        return make_response(
-            render_template('apps/enrolledapps.html'),
-            200, headers
-        )
 
+        if 'User' in session:
+            username = session['User']['userName']
+            profilePicture = session['User']['profilePicture']
+
+            return make_response(
+                render_template('apps/enrolledapps.html',
+                                username = username,
+                                profilePicture = profilePicture
+                                ),
+                200, headers
+            )
+        else:
+            return make_response(
+                redirect('/login')
+            )
 
 
 class Enrolled_App_Render(Resource):
     def get(self, id):
         headers = {'Content-Type': 'text/html'}
-        return make_response(
-            render_template('apps/fireAlarmSystem/enrolleddashboard.html'),
-            200, headers
-        )
+
+        if 'User' in session:
+            username = session['User']['userName']
+            profilePicture = session['User']['profilePicture']
+
+            return make_response(
+                render_template('apps/fireAlarmSystem/enrolleddashboard.html',
+                                username = username,
+                                profilePicture = profilePicture
+                                ),
+                200, headers
+            )
+        else:
+            return make_response(
+                redirect('/login')
+            )
+
 
 class TemperatureGen(Resource):
     def get(self):
