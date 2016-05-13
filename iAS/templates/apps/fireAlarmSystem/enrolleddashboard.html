@@ -20,13 +20,23 @@
 <script type="text/javascript" src="{{ url_for('static', filename='js/raphael-2.1.4.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/justgage.js') }}"></script>
 <script>
-  var g = new JustGage({
-    id: "gauge",
-    value: 67,
-    min: 0,
-    max: 100,
-    title: "Temprature"
-  });
+
+     var g = new JustGage({
+            id: "gauge",
+            value: 50,
+            min: 0,
+            max: 100,
+            title: "Temprature"
+          });
+
+    (function getdata(){
+        $.get('/enrolledapps/ajax/getdata', function(data){
+            console.log(data);
+            g.refresh(data['temperature']);
+            setTimeout(getdata, 1000);
+        });
+    })();
+
 </script>
 </div>
 

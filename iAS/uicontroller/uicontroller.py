@@ -14,6 +14,7 @@
 
 from __init__ import *
 from iAS.core.appmgt import appDAO
+from random import randint
 
 
 class Main(Resource):
@@ -61,8 +62,6 @@ class Application_Render(Resource):
             profilePicture = session['User']['profilePicture']
             appDetais = appDAO.getAppDetailsById(id)
 
-            print appDetais.de
-
             return make_response(
                 render_template('applications/application.html',
                                 username = username,
@@ -81,7 +80,7 @@ class EnrolledApps(Resource):
     def get(self):
         headers = {'Content-Type': 'text/html'}
         return make_response(
-            render_template('applications/enrolledapps.html'),
+            render_template('apps/enrolledapps.html'),
             200, headers
         )
 
@@ -91,6 +90,14 @@ class Enrolled_App_Render(Resource):
     def get(self, id):
         headers = {'Content-Type': 'text/html'}
         return make_response(
-            render_template('applications/enrolleddashboard.html'),
+            render_template('apps/fireAlarmSystem/enrolleddashboard.html'),
             200, headers
+        )
+
+class TemperatureGen(Resource):
+    def get(self):
+        temperature = randint(0, 100)
+        return make_response(
+                jsonify({'temperature': temperature}),
+                200
         )

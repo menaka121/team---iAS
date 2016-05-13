@@ -43,11 +43,12 @@
           </div>
           <div style="text-align: center" class="modal-body">
 
-              <form class="form-horizontal" action="/device/downloads" method="get">
+              <form class="form-horizontal" action="/appications/downloads" method="get">
                     <div class="form-group">
-                        <input type="text" name="device-name">
+                        <input type="text" name="device-name" value="">
                     </div>
                         <input type="hidden" name="appid" value="{{ appDetails.appid }}">
+                        <input type="hidden" name="app-name" value="{{ appDetails.name }}">
 
                     <button type="submit" class="btn btn-primary">Dwonload ZIP <span class="glyphicon glyphicon-download"></span></button>
               </form>
