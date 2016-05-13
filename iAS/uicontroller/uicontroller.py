@@ -109,8 +109,8 @@ class Enrolled_App_Render(Resource):
 
             return make_response(
                 render_template('apps/fireAlarmSystem/enrolleddashboard.html',
-                                username = username,
-                                profilePicture = profilePicture
+                                username=username,
+                                profilePicture=profilePicture
                                 ),
                 200, headers
             )
