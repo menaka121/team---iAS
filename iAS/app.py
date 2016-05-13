@@ -47,7 +47,7 @@ def get_access_token():
 
 @app.route('/applications/downloads')
 def download():
-    userEmail = session["User"]["email"]
+    userEmail = session["User"]["useremail"]
     deviceName = request.args['app-name']
     deviceId = request.args['appid']
     archive = zipfile.ZipFile(downloadAgent(userEmail, deviceName, deviceId), 'r')

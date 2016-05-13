@@ -65,9 +65,9 @@ class Application_Render(Resource):
 
             return make_response(
                 render_template('applications/application.html',
-                                username = username,
-                                profilePicture = profilePicture,
-                                appDetails = appDetais
+                                username=username,
+                                profilePicture=profilePicture,
+                                appDetails=appDetais
                                 ),
                 200, headers
             )
@@ -83,14 +83,15 @@ class EnrolledApps(Resource):
 
         if 'User' in session:
             username = session['User']['userName']
+            userEmail = session['User']['useremail']
             profilePicture = session['User']['profilePicture']
-
-            deviceList = DeviceDAO.getDevices(username)
+            dao = DeviceDAO()
+            deviceList = dao.getDevices(userEmail)
 
             return make_response(
                 render_template('apps/enrolledapps.html',
-                                username = username,
-                                profilePicture = profilePicture,
+                                username=username,
+                                profilePicture=profilePicture,
                                 devices=deviceList),
                 200, headers)
         else:
