@@ -24,7 +24,8 @@ api.add_resource(Main, '/')
 
 api.add_resource(Applications, '/applications')
 api.add_resource(Application_Render, '/applications/<id>')
-
+api.add_resource(EnrolledApps, '/enrolledapps')
+api.add_resource(Enrolled_App_Render, '/enrolledapps/<id>')
 
 api.add_resource(Login, '/login')
 
@@ -44,7 +45,7 @@ def get_access_token():
 
 @app.route('/applications/downloads')
 def download():
-    userEmail = session["User"]["email"]
+    userEmail = session["User"]["useremail"]
     deviceName = request.args['app-name']
     deviceId = request.args['appid']
     archive = zipfile.ZipFile(downloadAgent(userEmail, deviceName, deviceId), 'r')
