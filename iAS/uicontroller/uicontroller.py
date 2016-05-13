@@ -15,6 +15,7 @@
 from __init__ import *
 from iAS.core.appmgt import appDAO
 from random import randint
+from iAS.core.devicemgt.DeviceDAO import *
 
 
 class Main(Resource):
@@ -81,16 +82,17 @@ class EnrolledApps(Resource):
         headers = {'Content-Type': 'text/html'}
 
         if 'User' in session:
-            username = session['User']['userName']
+            username = session['User']['useremail']
             profilePicture = session['User']['profilePicture']
+
+            deviceList = DeviceDAO.getDevices(username)
 
             return make_response(
                 render_template('apps/enrolledapps.html',
                                 username = username,
-                                profilePicture = profilePicture
-                                ),
-                200, headers
-            )
+                                profilePicture = profilePicture,
+                                devices=deviceList),
+                200, headers)
         else:
             return make_response(
                 redirect('/login')
