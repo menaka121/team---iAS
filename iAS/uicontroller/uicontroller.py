@@ -82,7 +82,7 @@ class EnrolledApps(Resource):
         headers = {'Content-Type': 'text/html'}
 
         if 'User' in session:
-            username = session['User']['useremail']
+            username = session['User']['userName']
             profilePicture = session['User']['profilePicture']
 
             deviceList = DeviceDAO.getDevices(username)
