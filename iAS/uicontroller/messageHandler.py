@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# libraries
-from flask import Flask
-from flask_restful import Api
+from __init__ import *
+from iAS.core.transportmgt.ideamart.sendMessage import *
 
-# files
-from iAS.uicontroller.uicontroller import *
-from iAS.uicontroller.authentication import *
-from iAS.uicontroller.messageHandler import *
+class messageHandler(Resource):
+    def get(self):
+        obj = messageBody(message="Waring Temparature is too high!", password="password",
+                          url="http://localhost:7000/sms/send",
+                          destAddress="tel:94771122336", applicationID="APP_000001")
+
+        sendMessage(obj)
+        return jsonify({'messageFromServer': "message Sent to device"})
