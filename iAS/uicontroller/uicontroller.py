@@ -83,10 +83,9 @@ class EnrolledApps(Resource):
 
         if 'User' in session:
             username = session['User']['userName']
-            userEmail = session['User']['useremail']
             profilePicture = session['User']['profilePicture']
             dao = DeviceDAO()
-            deviceList = dao.getDevices(userEmail)
+            deviceList = dao.getDevices(username)
 
             return make_response(
                 render_template('apps/enrolledapps.html',
@@ -110,8 +109,8 @@ class Enrolled_App_Render(Resource):
 
             return make_response(
                 render_template('apps/fireAlarmSystem/enrolleddashboard.html',
-                                username = username,
-                                profilePicture = profilePicture
+                                username=username,
+                                profilePicture=profilePicture
                                 ),
                 200, headers
             )
@@ -123,7 +122,7 @@ class Enrolled_App_Render(Resource):
 
 class TemperatureGen(Resource):
     def get(self):
-        temperature = randint(0, 100)
+        temperature = randint(27, 29)
         return make_response(
                 jsonify({'temperature': temperature}),
                 200
