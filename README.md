@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/menaka121/team---iAS.svg?branch=master)](https://travis-ci.org/menaka121/team---iAS)
+
 <img style="border-radius:5px;margin-left:auto;margin-right:auto" src="https://raw.githubusercontent.com/CodeLankaHack/team---iAS/master/iAS/static/images/logoiAS.png" width="300px">
 # iApplicationServer - iAS
 
