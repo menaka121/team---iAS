@@ -14,6 +14,7 @@
 
 
 from __init__ import *
+from iAS.core.devicemgt.EnrollDevice import *
 
 app = Flask(__name__)
 api = Api(app)
@@ -23,6 +24,7 @@ api.add_resource(Main, '/')
 
 api.add_resource(Applications, '/applications')
 api.add_resource(Application_Render, '/applications/<id>')
+# api.add_resource(DownloadAgent, '/applications/download')
 
 
 api.add_resource(Login, '/login')
@@ -40,4 +42,16 @@ def authorized(resp):
 @google.tokengetter
 def get_access_token():
     return session.get('access_token')
+
+@app.route('/applications/download')
+def download():
+    userEmail = session["User"]["email"]
+    deviceName = request.args['app-name']
+    deviceId = request.args['appid']
+    archive = zipfile.ZipFile(downloadAgent(userEmail, deviceName, deviceId), 'r')
+    archive.close()
+    return Response(archive,
+                    mimetype='application/zip',
+                    headers={'Content-Disposition': 'attachment; filename=agent.zip'})
+
 

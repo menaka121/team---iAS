@@ -13,7 +13,7 @@
 # limitations under the License.
 
 from __init__ import *
-
+from iAS.core.devicemgt.EnrollDevice import *
 
 class Main(Resource):
     def get(self):
