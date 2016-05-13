@@ -11,11 +11,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-
 import os
+
 from iAS.app import *
 
 app.config.from_object(__name__)
 app.secret_key = os.urandom(24)
 app.debug = True
+app.root = os.path.abspath(os.path.dirname(__file__))

@@ -11,9 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+import zipfile
 
 from __init__ import *
+from iAS.core.devicemgt.EnrollDevice import downloadAgent
 
 app = Flask(__name__)
 api = Api(app)
@@ -23,9 +24,6 @@ api.add_resource(Main, '/')
 
 api.add_resource(Applications, '/applications')
 api.add_resource(Application_Render, '/applications/<id>')
-api.add_resource(EnrolledApps, '/enrolledapps')
-api.add_resource(Enrolled_App_Render, '/enrolledapps/<id>')
-api.add_resource(TemperatureGen, '/enrolledapps/ajax/getdata')
 
 
 api.add_resource(Login, '/login')
@@ -43,4 +41,16 @@ def authorized(resp):
 @google.tokengetter
 def get_access_token():
     return session.get('access_token')
+
+@app.route('/applications/downloads')
+def download():
+    userEmail = session["User"]["email"]
+    deviceName = request.args['app-name']
+    deviceId = request.args['appid']
+    archive = zipfile.ZipFile(downloadAgent(userEmail, deviceName, deviceId), 'r')
+    archive.close()
+    return Response(archive,
+                    mimetype='application/zip',
+                    headers={'Content-Disposition': 'attachment; filename=agent.zip'})
+
 

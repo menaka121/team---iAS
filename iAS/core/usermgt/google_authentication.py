@@ -48,11 +48,7 @@ def getUserInfo(access_token):
                    profilePicture=response.get("picture", ""))
 
     if getUserAvailability(response.get("email", "")):
-        putUserData(userId=UserObj.userId,
-                    userName=UserObj.userName,
-                    gender=UserObj.gender,
-                    email=UserObj.email,
-                    profilePicture=UserObj.profilePicture)
+        putUserData(UserObj)
 
 
 def getUser():

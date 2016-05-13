@@ -1,26 +1,36 @@
-# iAS - iApplicationServer
+<img style="border-radius:5px;margin-left:auto;margin-right:auto" src="https://raw.githubusercontent.com/CodeLankaHack/team---iAS/master/iAS/static/images/logoiAS.png" width="300px">
+# iApplicationServer - iAS
 
-##Synopsis
 
-iOT App Server (iAS) is an open source cloud platform for iOT applications.
-Platform introduces some device types which can be enrolled to the platform and an application
-can be used for it.
-Anyone can create a device type and they can use our
-applications for it by enrolling the device type to
-platform without any programming knowledge.
-And also they can get result to their mobile phone through sms.
-Google API is used for authentication.
-For an example Fire alarm system is one of the
-application in iOT App Server. For Fire alarm system
-user can use Raspberry Pi and Thermistor and enroll it
-in the system. Likewise iOT App Server consist of such
-applications like smart parking, Traffic Congestion, etc.
-Since the platform is open source anyone can come up with
-more complex iOT applications and plug their applications
-to the iOT App Server and also the community and the
-users who are doing research in the iOT domain also get
-benefited. This will lead the community to accelerate
-the research in the area of iOT and come up with new
-ideas which can be useful to anyone with or without the
-knowledge in the domain.
 
+iApplicationServer (iAS) is an open source cloud platform for iOT applications. Platform introduces some device types which can be enrolled to the platform and an application can be used for it.Anyone can create a device type and they can use our applications for it by enrolling the device type to a platform without any programming knowledge.And also, they can get the result to their mobile phone through SMS.iApplicationServer consists of such applications like Smart Parking, Traffic Congestion, Fire Alarm application, etc.
+
+* Google API is used for authentication users
+* Dialog Ideamart API is used for developed the SMS alerting service
+
+
+#### Example
+>Fire alarm system is one of the
+application in iOT App Server. For create a Fire alarm system
+user can use a device type such as Raspberry Pi, Arduino or Uno, and Thermistor sensor and enroll the Fire Alarm application in the iAS system. 
+
+<hr>
+
+#### Team - iAS, Faculty of Engineering, University Of Peradeniya 
+<img style="border-radius:5px" src="https://avatars2.githubusercontent.com/u/9385170?v=3&s=460" width="120px"><br>Tharinda Ehelepola | <img style="border-radius:5px" src="https://avatars0.githubusercontent.com/u/10165411?v=3&s=460" width="120px"><br>Menaka Jayawardhana  | <img style="border-radius:5px" src="https://avatars1.githubusercontent.com/u/9251082?v=3&s=460" width="120px"><br>Irunika Lakmal  | <img style="border-radius:5px" src="https://avatars2.githubusercontent.com/u/9445375?v=3&s=460" width="120px"><br>Dileepa Chandima 
+------------ | ------------- | ------------ | -------------
+
+<hr>
+
+##### Licenses
+
+> http://www.apache.org/licenses/LICENSE-2.0<br><br>
+<hr>
+
+### Technologies
+
+* Python
+* Flask framework
+* Jinja framework
+* MQTT protocol
+* mongodb 
