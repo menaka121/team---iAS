@@ -51,6 +51,7 @@ def download():
     deviceName = request.args['app-name']
     deviceId = request.args['appid']
     archive = zipfile.ZipFile(downloadAgent(userName, deviceName, deviceId), 'r')
+    print(userName)
     archive.close()
     return Response(archive,
                     mimetype='application/zip',

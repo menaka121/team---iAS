@@ -86,7 +86,7 @@ class EnrolledApps(Resource):
             profilePicture = session['User']['profilePicture']
             dao = DeviceDAO()
             deviceList = dao.getDevices(username)
-
+            print(deviceList)
             return make_response(
                 render_template('apps/enrolledapps.html',
                                 username=username,
