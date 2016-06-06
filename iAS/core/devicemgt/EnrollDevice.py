@@ -28,7 +28,7 @@ def generateId():
     return int(round(time.time()))
 
 
-def enrollDevice(deviceOwner = "", deviceType = "", deviceName = ""):
+def enrollDevice(deviceOwner="", deviceType="", deviceName=""):
     deviceId = generateId()
     device = Device()
     device.deviceID = deviceId
@@ -38,6 +38,7 @@ def enrollDevice(deviceOwner = "", deviceType = "", deviceName = ""):
 
     deviceDao = DeviceDAO()
     return deviceDao.createDevice(device)
+
 
 def createZipFile(src, fileName):
     zf = zipfile.ZipFile("%s.zip" % fileName, "w", zipfile.ZIP_DEFLATED)
@@ -50,6 +51,7 @@ def createZipFile(src, fileName):
                                         arcname)
             zf.write(absname, arcname)
     zf.close()
+
 
 def downloadAgent(userId, deviceName, deviceId):
     enrollDevice(userId, "FireAlarm", deviceName)

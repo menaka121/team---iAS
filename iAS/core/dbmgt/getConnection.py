@@ -15,7 +15,8 @@
 from __init__ import *
 
 def getDatabase():
-    url = "mongodb://iAS:iAS@ds021182.mlab.com:21182/ias"
+    url = "mongodb://172.22.111.212:27017"
     client = MongoClient(url)
     db = client.ias
     return db
+
