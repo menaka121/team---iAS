@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/menaka121/team---iAS.svg?branch=master)](https://travis-ci.org/menaka121/team---iAS)
-
+[![Code Health](https://landscape.io/github/menakaj/team---iAS/master/landscape.svg?style=flat)](https://landscape.io/github/menakaj/team---iAS/master)
 <img style="border-radius:5px;margin-left:auto;margin-right:auto" src="https://raw.githubusercontent.com/CodeLankaHack/team---iAS/master/iAS/static/images/logoiAS.png" width="300px">
 # iApplicationServer - iAS
 
